@@ -11,12 +11,7 @@ def minOperations(n):
         int: The minimum number of operations required. Returns 0 if n is impossible to achieve.
 
     Examples:
-        >>> minOperations(9)
-        6
-        >>> minOperations(4)
-        4
-        >>> minOperations(12)
-        7
+    
     """
     if n <= 1:
         return 0

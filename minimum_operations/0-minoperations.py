@@ -1,29 +1,21 @@
 #!/usr/bin/python3
+"""Minimum Operations"""
+import math
+
 
 def minOperations(n):
-    """
-Main file for testing
-"""
+    """Minimum Operations"""
     if n <= 1:
         return 0
 
     operations = 0
-    divisor = 2
+    for i in range(2, int(math.sqrt(abs(n))) + 1):
+        while n % i == 0:
+            operations += i
+            n //= i
 
-    while n > 1:
-        if n % divisor == 0:
-            operations += divisor
-            n //= divisor
-        else:
-            divisor += 1
+    if n > 1:
+        operations += n
 
     return operations
-
-
-if __name__ == '__main__':
-    n = 4
-    print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
-
-    n = 12
-    print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
 

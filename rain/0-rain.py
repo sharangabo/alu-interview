@@ -15,4 +15,8 @@ def rain(walls):
         for j in range(i + 1, len(walls)):
             right = max(right, walls[j])
         water += min(left, right) - walls[i]
+<<<<<<< HEAD
     return water
+=======
+    return water
+>>>>>>> 50c99f0 (Rain)

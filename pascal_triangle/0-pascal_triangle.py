@@ -1,25 +1,17 @@
 #!/usr/bin/python3
-"""
-0-main
-"""
+"""0-pascal_triangle.py"""
+
 
 def pascal_triangle(n):
+    """Print a pascal triangle"""
     if n <= 0:
         return []
-
     triangle = [[1]]
     for i in range(1, n):
-        prev_row = triangle[i-1]
-        curr_row = [1]
+        row = [1]
         for j in range(1, i):
-            curr_row.append(prev_row[j-1] + prev_row[j])
-        curr_row.append(1)
-        triangle.append(curr_row)
-
+            row.append(triangle[i - 1][j - 1] + triangle[i - 1][j])
+        row.append(1)
+        triangle.append(row)
     return triangle
 
-def print_triangle(triangle):
-    for row in triangle:
-        print("[{}]".format(",".join([str(x) for x in row])))
-
-print_triangle(pascal_triangle(5))
